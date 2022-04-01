@@ -5,12 +5,17 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const {deployments, getNamedAccounts} = hre;
   const {deploy, execute} = deployments;
 
-  const {deployer} = await getNamedAccounts();
+  const {deployer, multisig, guardian} = await getNamedAccounts();
 
-  await deploy('SimpleERC20', {
+  await deploy('IronBankTimelock', {
     from: deployer,
+    args: [
+      86400,
+      [multisig],
+      [multisig, guardian]
+    ],
     log: true,
   });
 };
 export default func;
-func.tags = ['SimpleERC20'];
+func.tags = ['IronBankTimelock'];

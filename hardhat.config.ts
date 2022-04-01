@@ -24,18 +24,22 @@ import '@nomiclabs/hardhat-etherscan';
   namedAccounts: {
     deployer: 0,
     admin: {
-      mainnet: '0x197939c1ca20C2b506d6811d8B6CDB3394471074',
-      bsc: '0x197939c1ca20C2b506d6811d8B6CDB3394471074',
+      hardhat: '0x0501Be0dA35990FbF5c434c29186A7966846c0D5',
+      mainnet: '0x0501Be0dA35990FbF5c434c29186A7966846c0D5',
+    },
+    guardian: {
+      hardhat: '0x9d960dAe0639C95a0C822C9d7769d19d30A430Aa',
+      mainnet: '0x9d960dAe0639C95a0C822C9d7769d19d30A430Aa'
     },
     multisig: {
-      mainnet: '0x6D5a7597896A703Fe8c85775B23395a48f971305',
-      bsc: '0xDF951b3657777ee21a3B01494C362d2ea9d4378E'
+      hardhat: '0xA5fC0BbfcD05827ed582869b7254b6f141BA84Eb',
+      mainnet: '0xA5fC0BbfcD05827ed582869b7254b6f141BA84Eb',
     }
   },
   networks: {
     hardhat: {
       forking: {
-        url: `https://cloudflare-eth.com`
+        url: `https://rpc.ankr.com/eth`
       }
     },
     mainnet: {
